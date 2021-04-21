@@ -7,7 +7,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-04-21T18:17:56+0800",
+    date = "2021-04-21T21:25:13+0800",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 1.8.0_282 (Amazon.com Inc.)"
 )
 public class ArtMemberConvertMapperImpl implements ArtMemberConvertMapper {

@@ -2,11 +2,15 @@ package com.qin.Common.entity.domain;
 
 import lombok.Data;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
 @Data
 @ToString
+@Component
 public class ArtMember {
     private Long id;
 
@@ -14,7 +18,7 @@ public class ArtMember {
 
     private String password;
 
-    private Byte accountType;
+    private Byte accountType = 2;
 
     private String accountName;
 
@@ -24,11 +28,11 @@ public class ArtMember {
 
     private String teacher;
 
-    private Byte specialtyType;
+    private Byte specialtyType = 0  ;
 
     private Date joinTime;
 
-    private Byte inGroupTime;
+    private Byte inGroupTime = 0;
 
     private String remark;
 
@@ -147,6 +151,7 @@ public class ArtMember {
     public void setGmtModify(Date gmtModify) {
         this.gmtModify = gmtModify;
     }
+
 
     @Override
     public String toString() {
