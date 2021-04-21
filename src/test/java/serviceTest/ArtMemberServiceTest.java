@@ -62,5 +62,23 @@ public class ArtMemberServiceTest {
     }
 
     @Test
-    public void
+    public void deleteMemberTest() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ArtMemberServiceImpl bean = context.getBean("artMemberServiceImpl", ArtMemberServiceImpl.class);
+        ArtMemberDTO dto = new ArtMemberDTO();
+        dto.setAccountName("王测试");
+        int i = bean.deleteMember(dto);
+        System.out.println(i);
+    }
+
+    @Test
+    public void updateMemberTest() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ArtMemberServiceImpl bean = context.getBean("artMemberServiceImpl", ArtMemberServiceImpl.class);
+        ArtMemberDTO dto = new ArtMemberDTO();
+        dto.setAccountName("测试");
+        dto.setMobile("188100120002");
+        int i = bean.updateMember(dto);
+        System.out.println(i);
+    }
 }

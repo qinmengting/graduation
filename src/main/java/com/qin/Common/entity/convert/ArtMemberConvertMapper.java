@@ -4,6 +4,7 @@ import com.qin.Common.entity.dto.ArtMemberDTO;
 import com.qin.Common.entity.param.ArtMemberParam;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
+import org.springframework.stereotype.Component;
 
 @Mapper
 public interface ArtMemberConvertMapper {
@@ -22,8 +23,11 @@ public interface ArtMemberConvertMapper {
 //            @Mapping(source = "username", target = "username"),
 //            @Mapping(source = "password", target = "password")
 //    })
-    ArtMemberDTO toAArtMemberDTO(ArtMember artMember);
+    ArtMemberDTO toArtMemberDTO(ArtMember artMember);
 
     ArtMember toArtMember(ArtMemberParam artMemberParam);
+
+    ArtMember DTOtoArtMember(ArtMemberDTO artMemberDTO);
+
 
 }

@@ -37,11 +37,9 @@ public class ArtMemberController {
 
     @RequestMapping("/allMembers")
     @ResponseBody
-    public String queryAllMembers() {
+    public String queryAllMembers(Model model) {
         List<ArtMember> members = artMemberService.queryAllMembers();
-        for (ArtMember member : members) {
-            System.out.println(member);
-        }
+        model.addAttribute("members",members);
         return "allMembers";
     }
 

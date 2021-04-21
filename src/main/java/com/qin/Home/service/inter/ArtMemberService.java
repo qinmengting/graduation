@@ -3,11 +3,7 @@ package com.qin.Home.service.inter;
 
 
 import com.qin.Common.entity.domain.ArtMember;
-import com.qin.Common.entity.domain.ArtMemberExample;
 import com.qin.Common.entity.dto.ArtMemberDTO;
-import lombok.Data;
-import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
 import java.util.List;
 
@@ -41,9 +37,9 @@ public interface ArtMemberService {
 
     /**
      * 修改成员信息(根据学号/姓名/）
-     * @param artMember
+     * @param artMemberDto
      * @return
      */
-    int updateMember(ArtMember artMember);
+    int updateMember(ArtMemberDTO artMemberDTO);
 
 }
