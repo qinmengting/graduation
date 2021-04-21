@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--    开启ioc注解支持-->
+    <context:annotation-config/>
+
+    <!--1.扫描service下的包-->
+    <context:component-scan base-package="com.qin.Home.service.*"/>
+    <context:component-scan base-package="com.qin.Home.service.impl"/>
+
+    <!--2.将所有的业务类注入到spring中，可以通过配置或者注解实现-->
+    <!--使用注解实现，直接在类上@Service，在需要自动装配的属性上@Autowired上即可-->
+    <bean id="ArtMemberServiceImpl" class="com.qin.Home.service.impl.ArtMemberServiceImpl">
+        <property name="ArtMemberMapper" ref="artMemberMapper"/>
+    </bean>
+
+    <!--3.声明式事务配置-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--注入数据源-->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--4.aop事务支持-->
+</beans>
